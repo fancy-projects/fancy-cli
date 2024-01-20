@@ -1,8 +1,0 @@
-fancy.py
-setup.py
-fancy.egg-info/PKG-INFO
-fancy.egg-info/SOURCES.txt
-fancy.egg-info/dependency_links.txt
-fancy.egg-info/entry_points.txt
-fancy.egg-info/requires.txt
-fancy.egg-info/top_level.txt

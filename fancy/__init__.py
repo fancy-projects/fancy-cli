@@ -6,7 +6,7 @@ from platform import system, release
 import click
 from PIL import Image
 
-FILE_PATH = __file__.removesuffix("/fancy.py")
+FILE_PATH = __file__.removesuffix("/__init__.py")
 
 if system() == "Darwin":
     folder_icon = f"{FILE_PATH}/folders/macos.icns"
