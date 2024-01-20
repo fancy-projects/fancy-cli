@@ -4,6 +4,8 @@ setup(
     name='fancy',
     version='1.0.0b1',
     packages=find_packages(),
+    package_data={'fancy': ['folders/*.icns']},
+    include_package_data=True,
     install_requires=[
         'Click',
         'Pillow'
