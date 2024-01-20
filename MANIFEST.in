@@ -1,1 +1,1 @@
-include folders/*.icns
+recursive-include fancy folders *.icns
