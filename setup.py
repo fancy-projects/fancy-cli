@@ -1,5 +1,7 @@
 from setuptools import setup, find_packages
 
+from setuptools import setup, find_packages
+
 setup(
     name='fancy',
     version='1.0.0-b1',
@@ -8,7 +10,7 @@ setup(
         'Click',
         'Pillow'
     ],
-    package_data={'fancy.folders': ['*.icns']},
+    package_data={'fancy': ['folders/*.icns']},
     include_package_data=True,
     entry_points={
         'console_scripts': [
