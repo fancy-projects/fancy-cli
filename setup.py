@@ -1,9 +1,9 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='fancy',
     version='1.0.0b1',
-    py_modules=['fancy'],
+    packages=find_packages(),
     install_requires=[
         'Click',
         'Pillow'
