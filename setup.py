@@ -6,10 +6,11 @@ setup(
     py_modules=['fancy'],
     install_requires=[
         'Click',
+        'Pillow'
     ],
     entry_points={
         'console_scripts': [
-            'fancy = fancy/fancy:fancy',
+            'fancy = fancy.__init__:fancy',
         ],
     },
 )
