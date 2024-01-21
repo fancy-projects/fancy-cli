@@ -6,7 +6,7 @@ from platform import system, release
 import click
 from PIL import Image
 
-FILE_PATH = __file__.removesuffix("/__init__.py")
+FILE_PATH = __file__.removesuffix("/__init__.py").removesuffix("\__init__.py")
 
 if system() == "Darwin":
     folder_icon = f"{FILE_PATH}/folders/macos.icns"
@@ -44,6 +44,10 @@ def fancy(folder, icon, output_path):
         center = (200, 256)
     else:
         center = (256, 300)
+
+    if system() == "Windows":
+        folder = folder.replace("/", "\\")
+        icon = icon.replace("/", "\\")
 
     folder = Image.open(folder).resize((1024, 1024))
     icon = Image.open(icon).resize((512, 512))
