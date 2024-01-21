@@ -50,7 +50,7 @@ def fancy(folder, icon, output_path):
         icon = icon.replace("/", "\\")
         folder = folder.replace("\\\\", "\\")
         icon = icon.replace("\\\\", "\\")
-        print(folder, icon)
+        click.echo((folder, icon))
     folder = Image.open(folder).resize((1024, 1024))
     icon = Image.open(icon).resize((512, 512))
 
