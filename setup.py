@@ -8,8 +8,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         'Click',
-        'Pillow',
-        'pyinstaller'
+        'Pillow'
     ],
     package_data={'fancy': ['folders/*.icns']},
     include_package_data=True,
