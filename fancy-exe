@@ -1,8 +1,8 @@
-#!/Users/Zhisen/PycharmProjects/src/venv/bin/python
+#!/Users/Zhisen/PycharmProjects/fancy/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
-from src.__init__ import fancy
+from fancy.__init__ import fancy
 
 if __name__ == '__main__':
     sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])

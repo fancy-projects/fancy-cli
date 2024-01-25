@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 from setuptools import setup, find_packages
 
 setup(
-    name='src',
+    name='fancy',
     version='1.0.0-b1',
     packages=find_packages(),
     install_requires=[
@@ -11,11 +11,11 @@ setup(
         'Pillow',
         'pyinstaller'
     ],
-    package_data={'src': ['folders/*.icns']},
+    package_data={'fancy': ['folders/*.icns']},
     include_package_data=True,
     entry_points={
         'console_scripts': [
-            'src = src.__init__:src',
+            'fancy = fancy.__init__:fancy',
         ],
     },
 )
