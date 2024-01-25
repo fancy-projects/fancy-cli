@@ -3,18 +3,19 @@ from setuptools import setup, find_packages
 from setuptools import setup, find_packages
 
 setup(
-    name='fancy',
+    name='src',
     version='1.0.0-b1',
     packages=find_packages(),
     install_requires=[
         'Click',
-        'Pillow'
+        'Pillow',
+        'pyinstaller'
     ],
-    package_data={'fancy': ['folders/*.icns']},
+    package_data={'src': ['folders/*.icns']},
     include_package_data=True,
     entry_points={
         'console_scripts': [
-            'fancy = fancy.__init__:fancy',
+            'src = src.__init__:src',
         ],
     },
 )

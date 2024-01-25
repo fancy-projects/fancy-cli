@@ -1,12 +1,12 @@
 """
 Folder Art with Neat Colors for You - FANCY
-Use command 'fancy' in the terminal
+Use command 'src' in the terminal
 """
 from platform import system, release
 import click
 from PIL import Image
 
-FILE_PATH = __file__.removesuffix("/__init__.py").removesuffix("\__init__.py")
+FILE_PATH = __file__.removesuffix("/__init__.py").removesuffix("\\__init__.py")
 
 if system() == "Darwin":
     folder_icon = f"{FILE_PATH}/folders/macos.icns"

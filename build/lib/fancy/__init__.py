@@ -1,6 +1,6 @@
 """
 Folder Art with Neat Colors for You - FANCY
-Use command 'fancy' in the terminal
+Use command 'src' in the terminal
 """
 from platform import system, release
 import click
