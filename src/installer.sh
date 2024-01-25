@@ -13,7 +13,9 @@ pip3 install ./fancy-cli
 
 ls ./fancy-cli
 cp ./fancy-cli/fancy-exe .
+ls
 rm -rf fancy-cli
 
-ln -s ./fancy-exe /usr/local/bin/fancy
+rm /usr/local/bin/fancy && ln -s ./fancy-exe /usr/local/bin/fancy
+
 echo "✨ fancy-cli installed! Use: fancy --help"
