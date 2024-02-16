@@ -1,0 +1,11 @@
+setup.py
+fancy/__init__.py
+fancy.egg-info/PKG-INFO
+fancy.egg-info/SOURCES.txt
+fancy.egg-info/dependency_links.txt
+fancy.egg-info/entry_points.txt
+fancy.egg-info/requires.txt
+fancy.egg-info/top_level.txt
+fancy/folders/macos.icns
+fancy/folders/win10.icns
+fancy/folders/win11.icns
