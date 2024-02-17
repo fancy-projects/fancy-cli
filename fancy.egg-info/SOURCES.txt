@@ -1,5 +1,7 @@
 setup.py
 fancy/__init__.py
+fancy/api.py
+fancy/click_version.py
 fancy.egg-info/PKG-INFO
 fancy.egg-info/SOURCES.txt
 fancy.egg-info/dependency_links.txt

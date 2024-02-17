@@ -1,32 +1,28 @@
-"""
-Folder Art with Neat Colors for You - FANCY
-Use command 'fancy' in the terminal
-"""
-print('eee')
-import click
-import api
+from pathlib import Path
 
-OS_FOLDER_ICON = api.get_folder_icon()
+from rich import print
+from rich.panel import Panel
 
+from typer import Typer, Argument, Option
+from typing_extensions import Annotated
 
-GREEN = "\e[32m"
-CYAN = "\e[36m"
+from fancy import api
 
-BOLD = "\e[1m"
-END = "\e[0m"
-
-@click.group()
-def cli():
-    pass
+app = Typer()
 
 
-@cli.command()
-@click.option('--folder', '-f', default=OS_FOLDER_ICON, type=click.Path(exists=True), help='Folder path.')
-@click.option('--output-path', '-o', default='icon', type=str, help=("File path of "
-                                                                     "output icon file including name of "
-                                                                     "file."))
-@click.option('--folder-color', '-c', type=str, help=("Color of folder. 'red', 'orange'"))
-@click.argument('icon', type=click.Path(exists=True))
-def fancy(folder, icon, output_path):
+@app.command()
+def fancy(
+        icon: Annotated[Path, Argument(exists=True, help="Icon file path.")],
+        folder: Annotated[Path, Option('--folder', '-f', exists=True, help="Folder path.")] = api.get_folder_icon(),
+        output_path: Annotated[Path, Option('--output-path', '-o', help="Output icon file path.")] = 'icon.icns',
+):
     api.overlay_icon(folder, icon, output_path)
-    click.echo(f"{BOLD}Folder created!{END} {CYAN}It should be stored at {output_path}{END}")  # noqa
+
+    print(Panel(
+        f"[bold red]Folder created![/bold red] It should be stored at [cyan]{output_path}[/cyan]",
+        title_align='left',
+        title='Success',
+        border_style='green'
+    )
+    )

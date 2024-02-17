@@ -1,2 +1,2 @@
 [console_scripts]
-fancy = fancy.__init__:fancy
+fancy = fancy.__init__:app
