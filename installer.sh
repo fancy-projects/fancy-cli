@@ -1,3 +1,12 @@
+#!/usr/bin/env bash
+
+rm -rf /usr/local/share/fancy-cli
+rm /usr/local/bin/fancy
+
 cd /usr/local/share
-git clone https://github.com/pythonkid90/fancy-cli
-ln -s ./fancy-runner/fancy-runner /usr/local/bin/fancy
+
+git clone https://github.com/pythonkid90/fancy-cli/
+
+ln -s /usr/local/share/fancy-cli/dist/fancy-runner-mac/fancy-runner /usr/local/bin/fancy
+
+
