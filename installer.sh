@@ -9,4 +9,6 @@ git clone https://github.com/pythonkid90/fancy-cli/
 
 ln -s /usr/local/share/fancy-cli/dist/fancy-runner-mac/fancy-runner /usr/local/bin/fancy
 
+echo "Install Completed! Type fancy --help for information about how to use the CLI."
+
 
