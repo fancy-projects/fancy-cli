@@ -2,12 +2,7 @@ from PIL import Image
 from platform import system, release
 from pathlib import Path
 
-file_path = str(Path(__file__).parent.resolve())
-
-
-def load_file_path(path: Path):
-    global file_path
-    file_path = str(path.resolve())
+file_path = Path(__file__).parent.resolve()
 
 def get_folder_icon():
     if system() == "Darwin":

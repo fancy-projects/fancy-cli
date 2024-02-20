@@ -18,7 +18,6 @@ def fancy(
         output_path: Annotated[Path, Option('--output-path', '-o', help="Output icon file path.")] = 'icon.icns',
 ):
     api.overlay_icon(folder, icon, output_path)
-
     print(Panel(
         f"[bold red]Folder created![/bold red] It should be stored at [cyan]{output_path}[/cyan]",
         title_align='left',
