@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
-
-rm -rf venv/lib/fancy
-rm -rf venv/bin/fancy
+#
+#rm -rf venv/lib/fancy
+#rm -rf venv/bin/fancy
 rm -rf venv/lib/__pycache__
 rm -rf __pycache__
 

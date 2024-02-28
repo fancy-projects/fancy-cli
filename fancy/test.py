@@ -1,4 +1,4 @@
-from fancy import app
+from fancy.cli import app
 
 if __name__ == "__main__":
     app()

@@ -3,6 +3,8 @@ from platform import system, release
 from pathlib import Path
 import numpy as np
 
+# from timeit import default_timer
+
 file_path = Path(__file__).parent.resolve()
 
 
@@ -25,11 +27,11 @@ def change_hue_to(folder_hue: float | str, folder_image: Image.Image) -> Image.I
     folder_image = folder_image.convert('HSV')
 
     image_array = np.array(folder_image)
-
+    # print(image_array[...][500, 500])
     # [..., 0] means first item (0) of last dimension (...)
-    hue_channel = image_array[..., 0]
-    hue_channel = hue_channel + folder_hue
-    image_array[..., 0] = hue_channel
+
+    image_array[..., 0] = (image_array[..., 0] + folder_hue) % 360
+    # print(image_array[...][500, 500])
 
     folder_image = Image.fromarray(image_array, 'HSV').convert('RGBA')
     folder_image.putalpha(folder_image_alpha)
@@ -55,12 +57,15 @@ def color_str_to_hue(color_str: str) -> int:
     return color_dict[color_str]
 
 
-def overlay_icon(folder_path: Path, icon: Path, output_path: Path, folder_color: str = None, size_percent: float = 50):
+def overlay_icon(folder_path: Path, icon: Path, output_path: Path, folder_color: str = None, size_percent: float = 65):
+    # open_time = default_timer()
     folder_img = Image.open(folder_path).resize((1024, 1024))
 
     icon_px = int(1024 * (size_percent / 100))
     icon_img = Image.open(icon).resize((icon_px, icon_px))
+    # print("open_time", default_timer() - open_time)
 
+    # hue_time = default_timer()
     if folder_color is not None:
         folder_img = change_hue_to(folder_color, folder_img)
 
@@ -69,5 +74,12 @@ def overlay_icon(folder_path: Path, icon: Path, output_path: Path, folder_color:
     else:
         center = ((folder_img.width - icon_img.width) // 2, (folder_img.height - icon_img.height) // 2 + 50)
 
+    # print("hue_time", default_timer() - hue_time)
+
+    # paste_time = default_timer()
     folder_img.paste(icon_img, center, mask=icon_img)
     folder_img.save(output_path)
+    # print("paste_time", default_timer() - paste_time)
+
+# overlay_icon(Path('./folders/macos.icns'), Path('/Users/Zhisen/Pictures/Downloaded Pictures/Icons/html.icns'),
+# Path('./icon.icns'), 'red', 70)
