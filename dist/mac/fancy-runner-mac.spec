@@ -1,11 +1,12 @@
 # -*- mode: python ; coding: utf-8 -*-
 
+from pathlib import Path
 
 a = Analysis(
-    ['fancy-runner.py'],
+    ['../fancy-runner.py'],
     pathex=[],
     binaries=[],
-    datas=[('../fancy/folders/*.icns', '../fancy/folders')],
+    datas=[('/Users/Zhisen/PycharmProjects/fancy/fancy/assets/*.icns', 'fancy/assets'), ('/Users/Zhisen/PycharmProjects/fancy/fancy/assets/*.png', 'fancy/assets')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

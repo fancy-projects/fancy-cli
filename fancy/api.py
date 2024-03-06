@@ -2,21 +2,22 @@ from PIL import Image
 from platform import system, release
 from pathlib import Path
 import numpy as np
+from json import dumps
 
 # from timeit import default_timer
 
 file_path = Path(__file__).parent.resolve()
 
 
-def get_folder_icon() -> str:
+def get_folder_icon() -> Path:
     if system() == "Darwin":
-        folder_icon = f"{file_path}/folders/macos.icns"
+        folder_icon = f"{file_path}/assets/folders/macos.icns"
     else:
         if release() == '11':
-            folder_icon = f"{file_path}/folders/win11.icns"
+            folder_icon = f"{file_path}/assets/folders/win11.icns"
         else:
-            folder_icon = f"{file_path}/folders/win10.icns"
-    return folder_icon
+            folder_icon = f"{file_path}/assets/folders/win10.icns"
+    return Path(folder_icon).resolve()
 
 
 def change_hue_to(folder_hue: float | str, folder_image: Image.Image) -> Image.Image:
@@ -57,7 +58,9 @@ def color_str_to_hue(color_str: str) -> int:
     return color_dict[color_str]
 
 
-def overlay_icon(folder_path: Path, icon: Path, output_path: Path, folder_color: str = None, size_percent: float = 65):
+def overlay_icon(folder_path: Path, icon: Path, output_path: Path,
+                 folder_color: str = None, size_percent: float = 65,
+                 config_file: tuple[bool, Path] = (False, "./fancy-config.json")):
     # open_time = default_timer()
     folder_img = Image.open(folder_path).resize((1024, 1024))
 
@@ -69,7 +72,7 @@ def overlay_icon(folder_path: Path, icon: Path, output_path: Path, folder_color:
     if folder_color is not None:
         folder_img = change_hue_to(folder_color, folder_img)
 
-    if folder_path == Path(f"{file_path}/folders/win10.icns"):
+    if folder_path == Path(f"{file_path}/assets/folders/win10.icns"):
         center = ((folder_img.width - icon_img.width) // 2 - 50, (folder_img.height - icon_img.height) // 2)
     else:
         center = ((folder_img.width - icon_img.width) // 2, (folder_img.height - icon_img.height) // 2 + 50)
@@ -79,7 +82,14 @@ def overlay_icon(folder_path: Path, icon: Path, output_path: Path, folder_color:
     # paste_time = default_timer()
     folder_img.paste(icon_img, center, mask=icon_img)
     folder_img.save(output_path)
+
+    if config_file:
+        generate_config_file(folder_path=folder_path, )
     # print("paste_time", default_timer() - paste_time)
 
+
+def generate_config_file(**kwargs):
+    with open('fancy-config.json', 'w') as fancy_config:
+        fancy_config.write(dumps(kwargs))
 # overlay_icon(Path('./folders/macos.icns'), Path('/Users/Zhisen/Pictures/Downloaded Pictures/Icons/html.icns'),
-# Path('./icon.icns'), 'red', 70)
+# Path('./example.icns'), 'red', 70)
