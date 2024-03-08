@@ -1,3 +1,0 @@
-Typer[all]
-Pillow
-numpy
