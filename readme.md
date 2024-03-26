@@ -1,8 +1,8 @@
-# Fancy: Folder Art with Neat Colors for You
-
+# FANCY: Folder Art with Neat Colors for You
+## NOTE: FANCY INSTALLATION IS NOT CURRENTLY AVAILABLE. INSTALL USING PYTHON PIP INSTEAD OF RUNNING INSTALLER.
 FANCY is a command-line interface (CLI) tool that helps you customize the icons for your folders.
 
-![FANCY logo](assets/poster.png)
+![FANCY logo](fancy/assets/poster.png)
 
 ## Installation
 
@@ -38,3 +38,4 @@ To view all available features, run:
 ## Windows Support
 
 FANCY currently does not support Windows. This feature is planned for version 1.0.0.
+
