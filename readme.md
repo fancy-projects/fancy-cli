@@ -1,33 +1,40 @@
-# ![Fancy](fancy/assets/poster.png)
+# Fancy: Folder Art with Neat Colors for You
 
-## FANCY is a CLI (Command Line Interface) that customizes folder icons.
+FANCY is a command-line interface (CLI) tool that helps you customize the icons for your folders.
 
-## How to install
+![FANCY logo](assets/poster.png)
 
-First, clone this repository onto your computer.
+## Installation
 
-Then, run the `installer.sh` script.
-This will install the CLI, making it
-ready for use on the terminal.
-The `dev_install.sh` is just a helper script
-for packaging the code. I've already done that
-for you, so you don't need to run that.
+1.  Clone the repository:
 
-Type `fancy --help` to view all features.
+    ```bash
+    git clone https://github.com/pythonkid90/fancy-cli
+    ```
 
-## Branches Overview
+2.  Install FANCY:
 
-- The "main" branch is expected to have almost
-  bugs and should be ready for production.
+    ```bash
+    ./installer.sh
+    ```
+    
+> **Note**: The `dev_install.sh` script is for development purposes and is not required for regular installation.
 
-- The "dev" branch is expected to have many
-  bugs but should work most of the time,
-  however many of the options may be broken.
+## Usage
 
-- The "canary" branch is expected to be
-  absolutely filled with bugs and the code
-  probably won't work at all.
+To view all available features, run:
 
-# IT DOES NOT WORK ON WINDOWS FOR NOW
+    ```bash
+    fancy --help
+    ```
+    
+## Branch Information
 
-## (That feature will be in v1.0.0)
+
+*   **main:** This branch is expected to be mostly stable for production use.
+*   **dev:** This branch may contain some bugs, and serves as a "staging area" for new features.
+*   **canary:** This branch is highly unstable and is only used for development. Do not use this branch.
+
+## Windows Support
+
+FANCY currently does not support Windows. This feature is planned for version 1.0.0.

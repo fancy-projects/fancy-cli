@@ -3,10 +3,10 @@
 from pathlib import Path
 
 a = Analysis(
-    ['../fancy-runner.py'],
+    ['../../fancy/__init__.py'],
     pathex=[],
     binaries=[],
-    datas=[('/Users/Zhisen/PycharmProjects/fancy/fancy/assets/*.icns', 'fancy/assets'), ('/Users/Zhisen/PycharmProjects/fancy/fancy/assets/*.png', 'fancy/assets')],
+    datas=[('../../fancy/assets/folders/*.icns', 'assets/folders')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

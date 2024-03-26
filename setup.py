@@ -7,13 +7,12 @@ setup(
     install_requires=[
         'Typer[all]',
         'Pillow',
-        'numpy',
     ],
-    package_data={'fancy': ['assets/folders/*.icns']},
+    package_data={'fancy': ['fancy/assets/folders/*.icns']},
     include_package_data=True,
     entry_points={
         'console_scripts': [
-            'fancy = fancy.cli:app',
+            'fancy = fancy.__init__:app',
         ],
     },
 )
