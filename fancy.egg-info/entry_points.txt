@@ -1,2 +1,0 @@
-[console_scripts]
-fancy = fancy.__init__:app

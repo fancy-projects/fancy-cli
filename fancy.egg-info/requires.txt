@@ -1,2 +1,0 @@
-Typer[all]
-Pillow
