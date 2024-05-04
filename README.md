@@ -24,9 +24,9 @@ FANCY is a command-line interface (CLI) tool that helps you customize the icons 
 
 To view all available features, run:
 
-    ```bash
-    fancy --help
-    ```
+```bash
+fancy --help
+```
     
 ## Branch Information
 
