@@ -1,0 +1,36 @@
+[project]
+name = "fancy-cli"
+version = "0.1.0-post3"
+description = "Folder Art with Neat Colors for You"
+dependencies = [
+    "numpy>=1.26.4",
+    "pillow>=10.3.0",
+    "typer>=0.12.3",
+]
+license = {text = "MIT License"}
+readme = "README.md"
+
+requires-python = ">= 3.8"
+
+[project.urls]
+Homepage = "https://fancy-projects.github.io/cli"
+Documentation = "https://fancy-projects.github.io/cli/docs"
+Repository = "https://github.com/fancy-projects/fancy-cli"
+Changelog = "https://fancy-projects.github.io/changelog"
+
+[project.scripts]
+fancy = 'fancy_cli.cli:app'
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fancy_cli"]
