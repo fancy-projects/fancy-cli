@@ -1,4 +1,4 @@
-# ![FANCY logo](fancy/assets/fancy-logo.png) FANCY-CLI: Folder Art with Neat Colors for You
+# ![FANCY logo](images/fancy-logo.png) FANCY-CLI: Folder Art with Neat Colors for You
 
 FANCY is a command-line interface (CLI) tool that helps you customize the icons for your folders.
 
@@ -20,8 +20,11 @@ To view all available features, run:
 fancy --help
 ```
 
+
 Documentation at <https://fancy-projects.github.io/cli/docs>
+
 PyPI page at <https://pypi.org/project/fancy-cli/>
+
 GitHub page at <https://github.com/fancy-projects/fancy-cli/>
 
 
