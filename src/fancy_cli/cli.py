@@ -25,7 +25,7 @@ parameter_data = {
     'icon_size_percent': Annotated[float, Option('--icon-size-percent', '-s',
                                                  help="Size of icon in proportion to folder.")],
 
-    'folder_color': Annotated[str, Option('--folder-color', '-c',
+    'folder_color': Annotated[str, Option('--color', '-c',
                                           help='Color of folder. Can be '
                                                '"default", "windows", "red", '
                                                '"orange", "yellow", "green", '
@@ -42,7 +42,7 @@ def fancy(
         output_path: parameter_data['output_path'] = './icon.icns',  # noqa: F821
         output_path_option: parameter_data['output_path_option'] = './icon.icns',  # noqa: F821
         folder: parameter_data['folder'] = api.get_folder_icon(),  # noqa: F821
-        icon_size_percent: parameter_data['icon_size_percent'] = 70,  # noqa: F821
+        icon_size_percent: parameter_data['icon_size_percent'] = 60,  # noqa: F821
         folder_color: parameter_data['folder_color'] = 'default',  # noqa: F821
 ):
     if output_path_option != Path('icon.icns'):
